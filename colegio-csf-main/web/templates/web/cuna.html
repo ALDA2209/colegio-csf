@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuna - IEI Cuna Jardín Carlos Showing Ferrari</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="{% static 'web/img/logo.png' %}" alt="Logo CSF" class="logo-img">
+        <div class="nav-nombre">
+          IEI Cuna Jardín Carlos Showing Ferrari
+          <span>Institución Educativa N° 001 · Huánuco</span>
+        </div>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/nosotros/">Nosotros</a></li>
+        <li class="nav-dropdown">
+          <a href="/programas/" class="active">Programas ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="/programas/cuna/" class="active">Cuna (0–2 años)</a></li>
+            <li><a href="/programas/jardin3/">Jardín 3 años</a></li>
+            <li><a href="/programas/jardin4/">Jardín 4 años</a></li>
+            <li><a href="/programas/jardin5/">Jardín 5 años</a></li>
+          </ul>
+        </li>
+        <li><a href="/galeria/">Galería</a></li>
+        <li><a href="/docentes/">Docentes</a></li>
+        <li><a href="/contacto/">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <span class="nosotros-tag">0 – 2 años</span>
+      <h1>Programa Cuna</h1>
+      <p>Estimulación temprana y desarrollo integral en los primeros años de vida</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <section class="programa-detalle-section">
+    <div class="sec-container">
+      <div class="programa-detalle-grid">
+        <div class="programa-detalle-content">
+          <h2>¿Qué aprenden los bebés en Cuna?</h2>
+          <p>El programa Cuna está diseñado para niños desde los primeros meses de vida hasta los 2 años. En esta etapa tan especial, cada momento es una oportunidad de aprendizaje.</p>
+          <p>Trabajamos con estimulación temprana personalizada, fomentando el desarrollo sensoriomotor, el vínculo afectivo y las primeras habilidades cognitivas y sociales.</p>
+          <div class="programa-detalle-areas">
+            <div class="area-item">
+              <span class="area-icon">🤲</span>
+              <div>
+                <strong>Desarrollo psicomotor</strong>
+                <p>Actividades que estimulan el movimiento, el equilibrio y la coordinación motora fina y gruesa.</p>
+              </div>
+            </div>
+            <div class="area-item">
+              <span class="area-icon">🎵</span>
+              <div>
+                <strong>Música y movimiento</strong>
+                <p>Canciones, ritmos y movimientos que estimulan el desarrollo auditivo y emocional del bebé.</p>
+              </div>
+            </div>
+            <div class="area-item">
+              <span class="area-icon">👁️</span>
+              <div>
+                <strong>Estimulación sensorial</strong>
+                <p>Juegos con texturas, colores y sonidos que desarrollan los sentidos del bebé.</p>
+              </div>
+            </div>
+            <div class="area-item">
+              <span class="area-icon">💛</span>
+              <div>
+                <strong>Vínculo afectivo</strong>
+                <p>Ambiente cálido y seguro que promueve el apego seguro entre el bebé y sus cuidadores.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="programa-detalle-img">
+          <img src="{% static 'web/img/cuna.jpg' %}" alt="Programa Cuna">
+          <div class="programa-detalle-info">
+            <h4>Información del programa</h4>
+            <ul>
+              <li>📅 <strong>Edad:</strong> 0 a 2 años</li>
+              <li>🕐 <strong>Horario:</strong> 7:30 am – 1:00 pm</li>
+              <li>👶 <strong>Grupos:</strong> Reducidos y personalizados</li>
+              <li>📍 <strong>Sede:</strong> Jr. Huallayco Nº 520, Huánuco</li>
+            </ul>
+            <a href="/contacto/" class="btn-gold" style="display:block; text-align:center; margin-top:20px;">Solicitar información</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="{% static 'web/img/logo.png' %}" alt="Logo CSF" class="logo-img">
+          <div class="footer-brand-name">
+            IEI Cuna Jardín Carlos Showing Ferrari
+            <small>Institución Educativa N° 001 · Huánuco</small>
+          </div>
+        </div>
+        <p class="footer-desc">Formamos niños felices, seguros y con valores desde sus primeros años de vida.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn">Facebook</a>
+          <a href="#" class="social-btn">WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Institución</h4>
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/nosotros/">Quiénes somos</a></li>
+          <li><a href="/docentes/">Docentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Programas</h4>
+        <ul>
+          <li><a href="/programas/cuna/">Cuna (0–2 años)</a></li>
+          <li><a href="/programas/jardin3/">Jardín 3 años</a></li>
+          <li><a href="/programas/jardin4/">Jardín 4 años</a></li>
+          <li><a href="/programas/jardin5/">Jardín 5 años</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="#">Jr. Huallayco Nº 520</a></li>
+          <li><a href="#">Huánuco Centro</a></li>
+          <li><a href="#">Lun–Vie 7:30–13:00</a></li>
+          <li><a href="/contacto/">Contáctanos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 IEI Cuna Jardín Carlos Showing Ferrari · Huánuco, Perú · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      nav.style.boxShadow = window.scrollY > 40
+        ? '0 4px 24px rgba(0,0,0,0.4)'
+        : '0 2px 10px rgba(0,0,0,0.3)';
+    });
+  </script>
+
+</body>
+</html>
