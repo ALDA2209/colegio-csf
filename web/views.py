@@ -20,3 +20,12 @@ def jardin4(request):
 
 def jardin5(request):
     return render(request, 'web/jardin5.html')
+
+def galeria(request):
+    return render(request, 'web/galeria.html')
+
+def docentes(request):
+    return render(request, 'web/docentes.html')
+
+def contacto(request):
+    return render(request, 'web/contacto.html')
