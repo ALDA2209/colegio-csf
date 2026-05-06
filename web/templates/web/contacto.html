@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - IEI Cuna Jardin Carlos Showing Ferrari</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="{% static 'web/img/logo.png' %}" alt="Logo CSF" class="logo-img">
+        <div class="nav-nombre">
+          IEI Cuna Jardin Carlos Showing Ferrari
+          <span>Institucion Educativa N 001 · Huanuco</span>
+        </div>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/nosotros/">Nosotros</a></li>
+        <li><a href="/programas/">Programas</a></li>
+        <li><a href="/galeria/">Galeria</a></li>
+        <li><a href="/docentes/">Docentes</a></li>
+        <li><a href="/contacto/" class="active">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="contact-hero">
+    <div class="contact-hero__content">
+      <span class="contact-hero__tag">Estamos aqui para ti</span>
+      <h1 class="contact-hero__title">Contactanos</h1>
+      <p class="contact-hero__subtitle">Nos encantaria conocer a tu familia y contarte todo sobre nuestros programas educativos.</p>
+    </div>
+    <div class="contact-hero__wave">
+      <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- INFO + FORMULARIO -->
+  <section class="contact-main">
+    <div class="contact-main__container">
+
+      <div class="contact-info">
+        <h2 class="contact-info__title">Informacion de Contacto</h2>
+        <div class="contact-info__card">
+          <div class="contact-info__icon">&#128205;</div>
+          <div>
+            <h3>Direccion</h3>
+            <p>Jiron Huallayco 518<br>Huanuco 10001, Peru</p>
+          </div>
+        </div>
+        <div class="contact-info__card">
+          <div class="contact-info__icon">&#128222;</div>
+          <div>
+            <h3>Telefono</h3>
+            <p>(062) 512-345<br>+51 987 654 321</p>
+          </div>
+        </div>
+        <div class="contact-info__card">
+          <div class="contact-info__icon">&#9993;</div>
+          <div>
+            <h3>Correo Electronico</h3>
+            <p>info@cunajardincsf.edu.pe<br>matriculas@cunajardincsf.edu.pe</p>
+          </div>
+        </div>
+        <div class="contact-schedule">
+          <h3 class="contact-schedule__title">Horario de Atencion</h3>
+          <div class="contact-schedule__row">
+            <span class="day">Lunes - Viernes</span>
+            <span class="hours">7:30 am - 5:00 pm</span>
+          </div>
+          <div class="contact-schedule__row">
+            <span class="day">Sabados</span>
+            <span class="hours">8:00 am - 12:00 pm</span>
+          </div>
+          <div class="contact-schedule__row">
+            <span class="day">Domingos y Feriados</span>
+            <span class="hours closed">Cerrado</span>
+          </div>
+        </div>
+        <div class="contact-social">
+          <h3>Siguenos en redes</h3>
+          <div class="contact-social__links">
+            <a href="#" class="social-btn facebook">Facebook</a>
+            <a href="#" class="social-btn whatsapp">WhatsApp</a>
+            <a href="#" class="social-btn instagram">Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <h2 class="contact-form-wrapper__title">Envianos un Mensaje</h2>
+        <p class="contact-form-wrapper__subtitle">Te responderemos en menos de 24 horas.</p>
+        <form class="contact-form" method="POST" action="/contacto/" novalidate>
+          {% csrf_token %}
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre *</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+            </div>
+            <div class="form-group">
+              <label for="apellido">Apellidos *</label>
+              <input type="text" id="apellido" name="apellido" placeholder="Tus apellidos" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Correo electronico *</label>
+              <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+            </div>
+            <div class="form-group">
+              <label for="telefono">Telefono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+51 999 999 999">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre_nino">Nombre del nino</label>
+              <input type="text" id="nombre_nino" name="nombre_nino" placeholder="Nombre del menor">
+            </div>
+            <div class="form-group">
+              <label for="edad">Edad del nino</label>
+              <select id="edad" name="edad">
+                <option value="">Selecciona una edad</option>
+                <option value="0-1">0 - 1 ano (Cuna)</option>
+                <option value="1-2">1 - 2 anos (Cuna)</option>
+                <option value="2-3">2 - 3 anos (Cuna)</option>
+                <option value="3">3 anos (Jardin 3)</option>
+                <option value="4">4 anos (Jardin 4)</option>
+                <option value="5">5 anos (Jardin 5)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group full-width">
+            <label for="asunto">Asunto *</label>
+            <select id="asunto" name="asunto" required>
+              <option value="">Selecciona un asunto</option>
+              <option value="matricula">Informacion sobre matricula</option>
+              <option value="programas">Consulta sobre programas educativos</option>
+              <option value="visita">Solicitar visita al colegio</option>
+              <option value="pagos">Consulta sobre pensiones y pagos</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <label for="mensaje">Mensaje *</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu consulta aqui..." required></textarea>
+          </div>
+          <div class="form-group full-width">
+            <label class="checkbox-label">
+              <input type="checkbox" name="acepto" required>
+              <span>Acepto la <a href="#">politica de privacidad</a> y el uso de mis datos.</span>
+            </label>
+          </div>
+          <button type="submit" class="btn-submit">Enviar Mensaje</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MAPA -->
+  <section class="contact-map">
+    <div class="contact-map__header">
+      <h2>Como Llegar</h2>
+      <p>Estamos en el Jr. Huallayco 518, en el corazon de Huanuco, de facil acceso para todas las familias.</p>
+    </div>
+    <div class="contact-map__frame">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.12!2d-76.24580!3d-9.93060!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91a7e9b0c2f3d1e5%3A0xabc123456789!2sJiron%20Huallayco%20518%2C%20Huanuco%2010001!5e0!3m2!1ses!2spe!4v1700000000000!5m2!1ses!2spe"
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="contact-cta">
+    <div class="contact-cta__container">
+      <span class="contact-cta__emoji">&#11088;</span>
+      <h2>Listo para visitar el colegio?</h2>
+      <p>Agenda una visita guiada y conoce nuestras instalaciones. Tu familia merece lo mejor!</p>
+      <a href="tel:+51987654321" class="btn-cta">Llamar Ahora</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="{% static 'web/img/logo.png' %}" alt="Logo CSF" class="logo-img">
+          <div class="footer-brand-name">
+            IEI Cuna Jardin Carlos Showing Ferrari
+            <small>Institucion Educativa N 001 · Huanuco</small>
+          </div>
+        </div>
+        <p class="footer-desc">Formamos ninos felices, seguros y con valores desde sus primeros anos de vida.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn">Facebook</a>
+          <a href="#" class="social-btn">WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Institucion</h4>
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/nosotros/">Quienes somos</a></li>
+          <li><a href="/docentes/">Docentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Programas</h4>
+        <ul>
+          <li><a href="/programas/">Cuna (0-2 anos)</a></li>
+          <li><a href="/programas/">Jardin 3 anos</a></li>
+          <li><a href="/programas/">Jardin 4 anos</a></li>
+          <li><a href="/programas/">Jardin 5 anos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="#">Jr. Huallayco 518</a></li>
+          <li><a href="#">Huanuco Centro</a></li>
+          <li><a href="#">Lun-Vie 7:30-5:00</a></li>
+          <li><a href="/contacto/">Contactanos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>2026 IEI Cuna Jardin Carlos Showing Ferrari · Huanuco, Peru · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      nav.style.boxShadow = window.scrollY > 40
+        ? '0 4px 24px rgba(0,0,0,0.4)'
+        : '0 2px 10px rgba(0,0,0,0.3)';
+    });
+  </script>
+
+</body>
+</html>
