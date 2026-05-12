@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from django.core.mail import send_mail
+import requests
+import os
 
 def inicio(request):
     return render(request, 'web/index.html')
@@ -40,11 +41,20 @@ def contacto(request):
         asunto = request.POST.get("asunto", "")
         mensaje = request.POST.get("mensaje", "")
         cuerpo = "Nombre: " + nombre + " " + apellido + "\nCorreo: " + email + "\nTelefono: " + telefono + "\nNino: " + nombre_nino + "\nEdad: " + edad + "\nAsunto: " + asunto + "\n\nMensaje:\n" + mensaje
-        send_mail(
-            subject="Nuevo mensaje - " + nombre + " " + apellido,
-            message=cuerpo,
-            from_email="pasivi22@gmail.com",
-            recipient_list=["pasivi22@gmail.com"],
-        )
+
+        api_key = os.environ.get("BREVO_API_KEY", "")
+        url = "https://api.brevo.com/v3/smtp/email"
+        headers = {
+            "accept": "application/json",
+            "api-key": api_key,
+            "content-type": "application/json"
+        }
+        data = {
+            "sender": {"name": "Colegio CSF", "email": "ab1c46001@smtp-brevo.com"},
+            "to": [{"email": "pasivi22@gmail.com"}],
+            "subject": "Nuevo mensaje - " + nombre + " " + apellido,
+            "textContent": cuerpo
+        }
+        requests.post(url, json=data, headers=headers)
         enviado = True
     return render(request, "web/contacto.html", {"enviado": enviado})
