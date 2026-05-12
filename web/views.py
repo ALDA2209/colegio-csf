@@ -55,6 +55,7 @@ def contacto(request):
             "subject": "Nuevo mensaje - " + nombre + " " + apellido,
             "textContent": cuerpo
         }
-        requests.post(url, json=data, headers=headers)
+        response = requests.post(url, json=data, headers=headers)
+        print('BREVO RESPONSE:', response.status_code, response.text)
         enviado = True
     return render(request, "web/contacto.html", {"enviado": enviado})
