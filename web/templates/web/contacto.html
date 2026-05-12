@@ -242,7 +242,21 @@
     </div>
   </footer>
 
-  <script>
+  <!-- MODAL EXITO -->
+<div id="modal-exito" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;justify-content:center;align-items:center;">
+  <div style="background:#fff;border-radius:16px;padding:40px;max-width:420px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.2);">
+    <div style="font-size:60px;">✅</div>
+    <h2 style="color:#1a3a5c;margin:16px 0 8px;">¡Mensaje enviado!</h2>
+    <p style="color:#555;">Gracias por contactarnos. Estaremos respondiendo a su solicitud a través de su correo electrónico en menos de 24 horas.</p>
+    <button onclick="document.getElementById('modal-exito').style.display='none'" style="margin-top:20px;background:#f5c500;color:#1a3a5c;border:none;padding:12px 32px;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer;">Cerrar</button>
+  </div>
+</div>
+
+{% if enviado %}
+<script>document.addEventListener('DOMContentLoaded',function(){document.getElementById('modal-exito').style.display='flex';});</script>
+{% endif %}
+
+<script>
     window.addEventListener('scroll', () => {
       const nav = document.getElementById('navbar');
       nav.style.boxShadow = window.scrollY > 40
@@ -251,5 +265,16 @@
     });
   </script>
 
+
+{% if enviado %}
+<div style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;display:flex;justify-content:center;align-items:center;">
+  <div style="background:#fff;border-radius:16px;padding:40px;max-width:420px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.2);">
+    <div style="font-size:60px;">&#10003;</div>
+    <h2 style="color:#1a3a5c;margin:16px 0 8px;">Mensaje enviado!</h2>
+    <p style="color:#555;">Gracias por contactarnos. Estaremos respondiendo a su solicitud a traves de su correo electronico en menos de 24 horas.</p>
+    <a href="/contacto/" style="display:inline-block;margin-top:20px;background:#f5c500;color:#1a3a5c;border:none;padding:12px 32px;border-radius:8px;font-weight:700;font-size:16px;text-decoration:none;">Cerrar</a>
+  </div>
+</div>
+{% endif %}
 </body>
 </html>
