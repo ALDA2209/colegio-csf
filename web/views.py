@@ -44,7 +44,7 @@ def contacto(request):
             subject="Nuevo mensaje - " + nombre + " " + apellido,
             message=cuerpo,
             from_email="pasivi22@gmail.com",
-            recipient_list=["yudyfalcon@hotmail.com"],
+            recipient_list=["pasivi22@gmail.com"],
         )
         enviado = True
     return render(request, "web/contacto.html", {"enviado": enviado})
