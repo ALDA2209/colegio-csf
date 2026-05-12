@@ -50,7 +50,7 @@ def contacto(request):
             "content-type": "application/json"
         }
         data = {
-            "sender": {"name": "Colegio CSF", "email": "ab1c46001@smtp-brevo.com"},
+            "sender": {"name": "Colegio CSF", "email": "pasivi22@gmail.com"},
             "to": [{"email": "pasivi22@gmail.com"}],
             "subject": "Nuevo mensaje - " + nombre + " " + apellido,
             "textContent": cuerpo
