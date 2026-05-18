@@ -1200,43 +1200,83 @@ footer {
 .btn-cta{display:inline-flex;align-items:center;gap:10px;background:#F5C800;color:#0D1B3E;padding:15px 36px;border-radius:50px;font-size:1rem;font-weight:800;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s}
 .btn-cta:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(245,200,0,0.35);color:#0D1B3E;text-decoration:none}
 nav .active{color:#F5C800 !important}
-/* ===== NAVBAR RESPONSIVE ===== */
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
+/* ===== MOBILE FIX COMPLETO ===== */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+#navbar {
+  background: #0D1B3E !important;
+}
+
+.navbar-brand .nav-nombre {
   color: white;
-  font-size: 28px;
-  cursor: pointer;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.navbar-brand .nav-nombre span {
+  display: block;
+  font-weight: 400;
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.85) !important;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: white !important;
 }
 
 @media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
+  .hero {
+    grid-template-columns: 1fr !important;
   }
-  .nav-menu {
-    display: none;
+  .hero-right {
+    display: none !important;
+  }
+  .hero-left {
+    padding: 40px 20px !important;
+  }
+  .hero-left h1 {
+    font-size: 28px !important;
+  }
+  .footer-top {
+    grid-template-columns: 1fr !important;
+    padding: 0 20px 40px !important;
+  }
+  .footer-bottom {
     flex-direction: column;
-    width: 100%;
-    background-color: #0d1b2a;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    padding: 16px 0;
-    z-index: 999;
-  }
-  .nav-menu.open {
-    display: flex;
-  }
-  .nav-menu li {
+    gap: 10px;
     text-align: center;
-    padding: 10px 0;
   }
-  .nav-container {
-    flex-wrap: wrap;
-    position: relative;
+  footer {
+    padding: 40px 20px 24px !important;
+  }
+  .sec-container {
+    padding: 0 16px !important;
+  }
+  .testimonio-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .aulas-cards {
+    grid-template-columns: 1fr !important;
+  }
+  .prog-cards {
+    grid-template-columns: 1fr !important;
   }
   .nav-nombre {
-    display: none;
+    display: none !important;
+  }
+  #menuPrincipal {
+    background: #0D1B3E;
+    padding: 10px 0;
   }
 }
