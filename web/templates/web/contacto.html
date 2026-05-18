@@ -52,8 +52,8 @@
   </section>
 
   <!-- INFO + FORMULARIO -->
-  <section class="contact-main">
-    <div class="contact-main__container">
+  <section class="contact-main" style="padding: 40px 16px 60px;">
+    <div class="contact-main__container" style="max-width: 100%; overflow: hidden;">
       <div class="contact-info">
         <h2 class="contact-info__title">Informacion de Contacto</h2>
         <div class="contact-info__card">
@@ -80,15 +80,15 @@
         <div class="contact-schedule">
           <h3 class="contact-schedule__title">Horario de Atencion</h3>
           <div class="contact-schedule__row">
-            <span class="day">Lunes - Viernes</span>
-            <span class="hours">7:30 am - 5:00 pm</span>
+            <span class="day">Lun - Vie</span>
+            <span class="hours">7:30 - 5:00 pm</span>
           </div>
           <div class="contact-schedule__row">
             <span class="day">Sabados</span>
-            <span class="hours">8:00 am - 12:00 pm</span>
+            <span class="hours">8:00 - 12:00 pm</span>
           </div>
           <div class="contact-schedule__row">
-            <span class="day">Domingos y Feriados</span>
+            <span class="day">Dom y Feriados</span>
             <span class="hours closed">Cerrado</span>
           </div>
         </div>
@@ -102,52 +102,46 @@
         </div>
       </div>
 
-      <div class="contact-form-wrapper">
+      <div class="contact-form-wrapper" style="padding: 24px 16px;">
         <h2 class="contact-form-wrapper__title">Envianos un Mensaje</h2>
         <p class="contact-form-wrapper__subtitle">Te responderemos en menos de 24 horas.</p>
         <form class="contact-form" method="POST" action="/contacto/" novalidate>
           {% csrf_token %}
-          <div class="form-row">
-            <div class="form-group">
-              <label for="nombre">Nombre *</label>
-              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
-            </div>
-            <div class="form-group">
-              <label for="apellido">Apellidos *</label>
-              <input type="text" id="apellido" name="apellido" placeholder="Tus apellidos" required>
-            </div>
+          <div class="form-group">
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required style="width:100%;">
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Correo electronico *</label>
-              <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
-            </div>
-            <div class="form-group">
-              <label for="telefono">Telefono</label>
-              <input type="tel" id="telefono" name="telefono" placeholder="+51 999 999 999">
-            </div>
+          <div class="form-group">
+            <label for="apellido">Apellidos *</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Tus apellidos" required style="width:100%;">
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="nombre_nino">Nombre del nino</label>
-              <input type="text" id="nombre_nino" name="nombre_nino" placeholder="Nombre del menor">
-            </div>
-            <div class="form-group">
-              <label for="edad">Edad del nino</label>
-              <select id="edad" name="edad">
-                <option value="">Selecciona una edad</option>
-                <option value="0-1">0 - 1 ano (Cuna)</option>
-                <option value="1-2">1 - 2 anos (Cuna)</option>
-                <option value="2-3">2 - 3 anos (Cuna)</option>
-                <option value="3">3 anos (Jardin 3)</option>
-                <option value="4">4 anos (Jardin 4)</option>
-                <option value="5">5 anos (Jardin 5)</option>
-              </select>
-            </div>
+          <div class="form-group">
+            <label for="email">Correo electronico *</label>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required style="width:100%;">
           </div>
-          <div class="form-group full-width">
+          <div class="form-group">
+            <label for="telefono">Telefono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+51 999 999 999" style="width:100%;">
+          </div>
+          <div class="form-group">
+            <label for="nombre_nino">Nombre del nino</label>
+            <input type="text" id="nombre_nino" name="nombre_nino" placeholder="Nombre del menor" style="width:100%;">
+          </div>
+          <div class="form-group">
+            <label for="edad">Edad del nino</label>
+            <select id="edad" name="edad" style="width:100%;">
+              <option value="">Selecciona una edad</option>
+              <option value="0-1">0 - 1 ano (Cuna)</option>
+              <option value="1-2">1 - 2 anos (Cuna)</option>
+              <option value="2-3">2 - 3 anos (Cuna)</option>
+              <option value="3">3 anos (Jardin 3)</option>
+              <option value="4">4 anos (Jardin 4)</option>
+              <option value="5">5 anos (Jardin 5)</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label for="asunto">Asunto *</label>
-            <select id="asunto" name="asunto" required>
+            <select id="asunto" name="asunto" required style="width:100%;">
               <option value="">Selecciona un asunto</option>
               <option value="matricula">Informacion sobre matricula</option>
               <option value="programas">Consulta sobre programas educativos</option>
@@ -156,11 +150,11 @@
               <option value="otro">Otro</option>
             </select>
           </div>
-          <div class="form-group full-width">
+          <div class="form-group">
             <label for="mensaje">Mensaje *</label>
-            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu consulta aqui..." required></textarea>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu consulta aqui..." required style="width:100%;"></textarea>
           </div>
-          <div class="form-group full-width">
+          <div class="form-group">
             <label class="checkbox-label">
               <input type="checkbox" name="acepto" required>
               <span>Acepto la <a href="#">politica de privacidad</a> y el uso de mis datos.</span>
@@ -180,7 +174,7 @@
     </div>
     <div class="contact-map__frame">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.12!2d-76.24580!3d-9.93060!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91a7e9b0c2f3d1e5%3A0xabc123456789!2sJiron%20Huallayco%20518%2C%20Huanuco%2010001!5e0!3m2!1ses!2spe!4v1700000000000!5m2!1ses!2spe"
-        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
   </section>
