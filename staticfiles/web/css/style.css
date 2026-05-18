@@ -1359,3 +1359,16 @@ html, body {
     padding: 16px !important;
   }
 }
+@media (max-width: 768px) {
+  .contact-schedule {
+    overflow-x: auto !important;
+  }
+  .contact-main {
+    overflow-x: hidden;
+    padding: 40px 16px !important;
+  }
+  .contact-main__container {
+    overflow-x: hidden;
+    width: 100%;
+  }
+}
