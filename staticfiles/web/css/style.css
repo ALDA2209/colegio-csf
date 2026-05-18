@@ -1350,3 +1350,12 @@ html, body {
     grid-template-columns: 1fr !important;
   }
 }
+@media (max-width: 768px) {
+  .contact-schedule__row {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .contact-schedule {
+    padding: 16px !important;
+  }
+}
