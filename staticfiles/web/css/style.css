@@ -1280,3 +1280,73 @@ html, body {
     padding: 10px 0;
   }
 }
+/* ===== NAVBAR MOBILE PROFESIONAL ===== */
+#menuPrincipal {
+  background: #0D1B3E;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+#menuPrincipal .nav-link {
+  color: rgba(255,255,255,0.85) !important;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px 20px !important;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+#menuPrincipal .nav-link:hover {
+  color: #F5C800 !important;
+  background: rgba(255,255,255,0.05);
+}
+
+#menuPrincipal .nav-link.active {
+  color: #F5C800 !important;
+}
+
+.navbar-toggler {
+  border-color: rgba(255,255,255,0.3) !important;
+  padding: 6px 10px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+/* ===== CONTACT MOBILE FIX ===== */
+@media (max-width: 768px) {
+  .contact-main__container {
+    padding: 0 16px !important;
+  }
+  .contact-schedule {
+    overflow-x: hidden;
+  }
+  .contact-schedule__row {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .contact-form-wrapper {
+    padding: 24px 16px !important;
+  }
+  .form-row {
+    grid-template-columns: 1fr !important;
+  }
+  .contact-hero__title {
+    font-size: 2rem !important;
+  }
+  .contact-map__frame iframe {
+    height: 300px !important;
+  }
+  .page-hero {
+    padding: 60px 20px !important;
+  }
+  .page-hero-content h1 {
+    font-size: 26px !important;
+  }
+  .programa-detalle-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .nosotros-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
