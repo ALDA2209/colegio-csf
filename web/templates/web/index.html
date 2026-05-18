@@ -1,41 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IEI Cuna Jardín Carlos Showing Ferrari - Huánuco</title>
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+{% extends 'web/base.html' %}
+{% load static %}
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="navbar">
-    <div class="container-fluid px-4">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="/">
-        <img src="{% static 'web/img/logo.png' %}" alt="Logo CSF" class="logo-img">
-        <div class="nav-nombre">
-          IEI Cuna Jardín Carlos Showing Ferrari
-          <span>Institución Educativa N° 001 · Huánuco</span>
-        </div>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="menuPrincipal">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="/nosotros/">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="/programas/">Programas</a></li>
-          <li class="nav-item"><a class="nav-link" href="/galeria/">Galería</a></li>
-          <li class="nav-item"><a class="nav-link" href="/docentes/">Docentes</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contacto/">Contacto</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+{% block title %}IEI Cuna Jardín Carlos Showing Ferrari - Huánuco{% endblock %}
+{% block nav_inicio %}active{% endblock %}
+
+{% block content %}
 
   <!-- HERO -->
   <section id="inicio" class="hero">
@@ -189,96 +158,26 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <img src="{% static 'web/img/logo.png' %}" alt="Logo CSF" class="logo-img">
-          <div class="footer-brand-name">
-            IEI Cuna Jardín Carlos Showing Ferrari
-            <small>Institución Educativa N° 001 · Huánuco</small>
-          </div>
-        </div>
-        <p class="footer-desc">Formamos niños felices, seguros y con valores desde sus primeros años de vida. Comprometidos con la educación inicial de calidad en Huánuco.</p>
-        <div class="footer-socials">
-          <a href="#" class="social-btn">Facebook</a>
-          <a href="#" class="social-btn">WhatsApp</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Institución</h4>
-        <ul>
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/nosotros/">Quiénes somos</a></li>
-          <li><a href="/nosotros/">Nuestra misión</a></li>
-          <li><a href="/docentes/">Docentes</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Programas</h4>
-        <ul>
-          <li><a href="/programas/">Cuna (0–2 años)</a></li>
-          <li><a href="/programas/">Jardín 3 años</a></li>
-          <li><a href="/programas/">Jardín 4 años</a></li>
-          <li><a href="/programas/">Jardín 5 años</a></li>
-          <li><a href="/contacto/">Matrícula 2025</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contacto</h4>
-        <ul>
-          <li><a href="#">Jr. Huallayco Nº 520</a></li>
-          <li><a href="#">Huánuco Centro</a></li>
-          <li><a href="#">Lun–Vie 7:30–13:00</a></li>
-          <li><a href="/galeria/">Galería de fotos</a></li>
-          <li><a href="/contacto/">Contáctanos</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 IEI Cuna Jardín Carlos Showing Ferrari · Huánuco, Perú · Todos los derechos reservados</p>
-      <div class="footer-links">
-        <a href="#">Privacidad</a>
-        <a href="#">Términos</a>
-        <a href="#">Mapa del sitio</a>
-      </div>
-    </div>
-  </footer>
+{% endblock %}
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    window.addEventListener('scroll', () => {
-      const nav = document.getElementById('navbar');
-      nav.style.boxShadow = window.scrollY > 40
-        ? '0 4px 24px rgba(0,0,0,0.4)'
-        : '0 2px 10px rgba(0,0,0,0.3)';
+{% block extra_js %}
+<script>
+  let currentSlide = 0;
+  function goToSlide(n) {
+    currentSlide = n;
+    const track = document.getElementById('carruselTrack');
+    const item = track.querySelector('.carrusel-item');
+    const itemWidth = item.offsetWidth + 24;
+    track.style.transform = `translateX(-${n * itemWidth}px)`;
+    document.querySelectorAll('.dot').forEach((d, i) => {
+      d.classList.toggle('active', i === n);
     });
-
-    let currentSlide = 0;
-
-    function goToSlide(n) {
-      currentSlide = n;
-      const track = document.getElementById('carruselTrack');
-      const item = track.querySelector('.carrusel-item');
-      const itemWidth = item.offsetWidth + 24;
-      track.style.transform = `translateX(-${n * itemWidth}px)`;
-      document.querySelectorAll('.dot').forEach((d, i) => {
-        d.classList.toggle('active', i === n);
-      });
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') goToSlide((currentSlide + 1) % 3);
-      if (e.key === 'ArrowLeft') goToSlide((currentSlide + 2) % 3);
-    });
-
-    window.addEventListener('load', () => goToSlide(0));
-
-    setInterval(() => {
-      goToSlide((currentSlide + 1) % 3);
-    }, 4000);
-  </script>
-
-</body>
-</html>
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') goToSlide((currentSlide + 1) % 3);
+    if (e.key === 'ArrowLeft') goToSlide((currentSlide + 2) % 3);
+  });
+  window.addEventListener('load', () => goToSlide(0));
+  setInterval(() => { goToSlide((currentSlide + 1) % 3); }, 4000);
+</script>
+{% endblock %}

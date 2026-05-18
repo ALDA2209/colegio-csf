@@ -1,43 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto - IEI Cuna Jardin Carlos Showing Ferrari</title>
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+{% extends 'web/base.html' %}
+{% load static %}
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="navbar">
-    <div class="container-fluid px-4">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="/">
-        <img src="{% static 'web/img/logo.png' %}" alt="Logo CSF" class="logo-img">
-        <div class="nav-nombre">
-          IEI Cuna Jardin Carlos Showing Ferrari
-          <span>Institucion Educativa N 001 · Huanuco</span>
-        </div>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="menuPrincipal">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="/nosotros/">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="/programas/">Programas</a></li>
-          <li class="nav-item"><a class="nav-link" href="/galeria/">Galería</a></li>
-          <li class="nav-item"><a class="nav-link" href="/docentes/">Docentes</a></li>
-          <li class="nav-item"><a class="nav-link active" href="/contacto/">Contacto</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+{% block title %}Contacto - IEI Cuna Jardín Carlos Showing Ferrari{% endblock %}
+{% block nav_contacto %}active{% endblock %}
 
-  <!-- HERO -->
+{% block content %}
+
   <section class="contact-hero">
     <div class="contact-hero__content">
       <span class="contact-hero__tag">Estamos aqui para ti</span>
@@ -51,7 +19,6 @@
     </div>
   </section>
 
-  <!-- INFO + FORMULARIO -->
   <section class="contact-main" style="padding: 40px 16px 60px;">
     <div class="contact-main__container" style="max-width: 100%; overflow: hidden;">
       <div class="contact-info">
@@ -166,7 +133,6 @@
     </div>
   </section>
 
-  <!-- MAPA -->
   <section class="contact-map">
     <div class="contact-map__header">
       <h2>Como Llegar</h2>
@@ -179,7 +145,6 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="contact-cta">
     <div class="contact-cta__container">
       <span class="contact-cta__emoji">⭐</span>
@@ -188,55 +153,6 @@
       <a href="tel:+51987654321" class="btn-cta">Llamar Ahora</a>
     </div>
   </section>
-
-  <!-- FOOTER -->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <img src="{% static 'web/img/logo.png' %}" alt="Logo CSF" class="logo-img">
-          <div class="footer-brand-name">
-            IEI Cuna Jardin Carlos Showing Ferrari
-            <small>Institucion Educativa N 001 · Huanuco</small>
-          </div>
-        </div>
-        <p class="footer-desc">Formamos ninos felices, seguros y con valores desde sus primeros anos de vida.</p>
-        <div class="footer-socials">
-          <a href="#" class="social-btn">Facebook</a>
-          <a href="#" class="social-btn">WhatsApp</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Institucion</h4>
-        <ul>
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/nosotros/">Quienes somos</a></li>
-          <li><a href="/docentes/">Docentes</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Programas</h4>
-        <ul>
-          <li><a href="/programas/">Cuna (0-2 anos)</a></li>
-          <li><a href="/programas/">Jardin 3 anos</a></li>
-          <li><a href="/programas/">Jardin 4 anos</a></li>
-          <li><a href="/programas/">Jardin 5 anos</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contacto</h4>
-        <ul>
-          <li><a href="#">Jr. Huallayco 518</a></li>
-          <li><a href="#">Huanuco Centro</a></li>
-          <li><a href="#">Lun-Vie 7:30-5:00</a></li>
-          <li><a href="/contacto/">Contactanos</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>2026 IEI Cuna Jardin Carlos Showing Ferrari · Huanuco, Peru · Todos los derechos reservados</p>
-    </div>
-  </footer>
 
   <div id="modal-exito" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;justify-content:center;align-items:center;">
     <div style="background:#fff;border-radius:16px;padding:40px;max-width:420px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.2);">
@@ -251,15 +167,4 @@
   <script>document.addEventListener('DOMContentLoaded',function(){document.getElementById('modal-exito').style.display='flex';});</script>
   {% endif %}
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    window.addEventListener('scroll', () => {
-      const nav = document.getElementById('navbar');
-      nav.style.boxShadow = window.scrollY > 40
-        ? '0 4px 24px rgba(0,0,0,0.4)'
-        : '0 2px 10px rgba(0,0,0,0.3)';
-    });
-  </script>
-
-</body>
-</html>
+{% endblock %}
