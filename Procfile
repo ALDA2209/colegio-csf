@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn colegio.wsgi
+web: gunicorn colegio.wsgi
