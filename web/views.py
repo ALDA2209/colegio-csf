@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
+from django.db import connection
 import requests
 import os
 
@@ -59,3 +61,7 @@ def contacto(request):
         print('BREVO RESPONSE:', response.status_code, response.text)
         enviado = True
     return render(request, "web/contacto.html", {"enviado": enviado})
+
+def health(request):
+    connection.ensure_connection()
+    return JsonResponse({"status": "ok"})
