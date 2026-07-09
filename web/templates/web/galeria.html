@@ -6,50 +6,134 @@
 
 {% block content %}
 
-  <section class="page-hero">
-    <div class="page-hero-content">
-      <span class="nosotros-tag">Nuestros Momentos</span>
-      <h1>Galería de Actividades</h1>
-      <p>Un recorrido visual por el aprendizaje y la alegría de nuestros estudiantes</p>
-    </div>
-  </section>
+<section class="page-hero">
+  <div class="page-hero-content">
+    <span class="nosotros-tag">Nuestros Momentos</span>
+    <h1>Galería de Actividades</h1>
+    <p>Un recorrido visual por el aprendizaje y la alegría de nuestros estudiantes</p>
+  </div>
+</section>
 
-  <section class="galeria-section" style="padding: 60px 0 120px 0; background-color: #ffffff;">
-    <div class="sec-container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-      <div class="galeria-filters" style="text-align: center; margin-bottom: 50px;">
-        <button class="btn-filter" data-target="todos" style="background: #ffc107; border: none; padding: 12px 30px; border-radius: 30px; font-weight: 800; cursor: pointer; margin: 5px; box-shadow: 0 4px 10px rgba(255,193,7,0.3);">Todos</button>
-        <button class="btn-filter" data-target="cuna" style="background: #f8f9fa; border: 1px solid #eee; padding: 12px 30px; border-radius: 30px; font-weight: 800; cursor: pointer; margin: 5px;">Cuna</button>
-        <button class="btn-filter" data-target="jardin" style="background: #f8f9fa; border: 1px solid #eee; padding: 12px 30px; border-radius: 30px; font-weight: 800; cursor: pointer; margin: 5px;">Jardín</button>
-        <button class="btn-filter" data-target="eventos" style="background: #f8f9fa; border: 1px solid #eee; padding: 12px 30px; border-radius: 30px; font-weight: 800; cursor: pointer; margin: 5px;">Eventos</button>
-      </div>
-      <div class="galeria-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 35px;">
-        <div class="galeria-item" data-category="eventos" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-          <img src="{% static 'web/img/consejo1.jpg' %}" alt="Actividad" style="width: 100%; height: 100%; object-fit: cover;">
-          <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 25px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white;">
-            <p style="font-weight: 700; font-size: 1.1rem; margin: 0;">Juegos al aire libre</p>
-          </div>
-        </div>
-        <div class="galeria-item" data-category="cuna" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-          <img src="{% static 'web/img/consejo2.jpg' %}" alt="Cuna" style="width: 100%; height: 100%; object-fit: cover;">
-          <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 25px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white;">
-            <p style="font-weight: 700; font-size: 1.1rem; margin: 0;">Aprendizaje lúdico</p>
-          </div>
-        </div>
-        <div class="galeria-item" data-category="jardin" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-          <img src="{% static 'web/img/consejo3.jpg' %}" alt="Lonchera" style="width: 100%; height: 100%; object-fit: cover;">
-          <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 25px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white;">
-            <p style="font-weight: 700; font-size: 1.1rem; margin: 0;">Alimentación saludable</p>
-          </div>
-        </div>
-        <div class="galeria-item" data-category="jardin" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-          <img src="{% static 'web/img/consejo4.jpg' %}" alt="Lectura" style="width: 100%; height: 100%; object-fit: cover;">
-          <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 25px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white;">
-            <p style="font-weight: 700; font-size: 1.1rem; margin: 0;">Hora del cuento</p>
-          </div>
-        </div>
+<section class="galeria-section" style="padding: 60px 0 120px 0; background-color: #ffffff;">
+  <div class="sec-container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+
+    <div class="galeria-filters" style="text-align: center; margin-bottom: 50px;">
+      <button class="btn-filter" data-target="todos" style="background: #ffc107; border: none; padding: 12px 30px; border-radius: 30px; font-weight: 800; cursor: pointer; margin: 5px; box-shadow: 0 4px 10px rgba(255,193,7,0.3);">
+        Todos
+      </button>
+
+      <button class="btn-filter" data-target="cuna" style="background: #f8f9fa; border: 1px solid #eee; padding: 12px 30px; border-radius: 30px; font-weight: 800; cursor: pointer; margin: 5px;">
+        Cuna
+      </button>
+
+      <button class="btn-filter" data-target="jardin" style="background: #f8f9fa; border: 1px solid #eee; padding: 12px 30px; border-radius: 30px; font-weight: 800; cursor: pointer; margin: 5px;">
+        Jardín
+      </button>
+
+      <div class="dropdown" style="display: inline-block; margin: 5px;">
+        <button class="btn-filter dropdown-toggle" type="button" id="eventosDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="background: #f8f9fa; border: 1px solid #eee; padding: 12px 30px; border-radius: 30px; font-weight: 800; cursor: pointer;">
+          Eventos
+        </button>
+
+        <ul class="dropdown-menu" aria-labelledby="eventosDropdown">
+          <li><a class="dropdown-item btn-filter-item" href="#" data-target="dia-madre">Día de la Madre</a></li>
+          <li><a class="dropdown-item btn-filter-item" href="#" data-target="dia-padre">Día del Padre</a></li>
+          <li><a class="dropdown-item btn-filter-item" href="#" data-target="aniversario">Aniversario</a></li>
+        </ul>
       </div>
     </div>
-  </section>
+
+    <div class="galeria-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 35px;">
+
+      <div class="galeria-item" data-category="cuna" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/consejo2.jpg' %}?v=2" alt="Cuna" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="jardin" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/consejo3.jpg' %}?v=2" alt="Jardín" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="jardin" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/consejo4.jpg' %}?v=2" alt="Jardín" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <!-- Día del Padre -->
+
+      <div class="galeria-item" data-category="dia-padre" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/dia-padre-1.jpg' %}?v=2" alt="Día del Padre" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="dia-padre" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/dia-padre-2.jpg' %}?v=2" alt="Día del Padre" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="dia-padre" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/dia-padre-3.jpg' %}?v=2" alt="Día del Padre" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="dia-padre" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/dia-padre-4.jpg' %}?v=2" alt="Día del Padre" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="dia-padre" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/dia-padre-5.jpg' %}?v=2" alt="Día del Padre" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="dia-padre" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/dia-padre-6.jpg' %}?v=2" alt="Día del Padre" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="dia-padre" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/dia-padre-7.jpg' %}?v=2" alt="Día del Padre" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="dia-padre" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/dia-padre-8.jpg' %}?v=2" alt="Día del Padre" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="dia-padre" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/dia-padre-9.jpg' %}?v=2" alt="Día del Padre" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="dia-padre" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/dia-padre-10.jpg' %}?v=2" alt="Día del Padre" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="dia-padre" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/dia-padre-11.jpg' %}?v=2" alt="Día del Padre" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="dia-padre" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/dia-padre-12.jpg' %}?v=2" alt="Día del Padre" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="dia-padre" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/dia-padre-13.jpg' %}?v=2" alt="Día del Padre" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="dia-padre" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/dia-padre-14.jpg' %}?v=2" alt="Día del Padre" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="dia-padre" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/dia-padre-15.jpg' %}?v=2" alt="Día del Padre" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="dia-padre" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/dia-padre-16.jpg' %}?v=2" alt="Día del Padre" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="dia-padre" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/dia-padre-17.jpg' %}?v=2" alt="Día del Padre" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="galeria-item" data-category="dia-padre" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <img src="{% static 'web/img/dia-padre-18.jpg' %}?v=2" alt="Día del Padre" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+    </div>
+  </div>
+</section>
 
 {% endblock %}
 
@@ -57,16 +141,43 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.btn-filter');
+    const dropdownItems = document.querySelectorAll('.btn-filter-item');
     const items = document.querySelectorAll('.galeria-item');
+    const eventosDropdown = document.getElementById('eventosDropdown');
+
+    function resetButtonStyles() {
+      buttons.forEach(btn => {
+        btn.style.background = '#f8f9fa';
+        btn.style.boxShadow = 'none';
+      });
+    }
+
+    function applyFilter(target) {
+      items.forEach(item => {
+        if (target === 'todos' || item.getAttribute('data-category') === target) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
     buttons.forEach(button => {
       button.addEventListener('click', () => {
-        buttons.forEach(btn => { btn.style.background = '#f8f9fa'; btn.style.boxShadow = 'none'; });
+        resetButtonStyles();
         button.style.background = '#ffc107';
         button.style.boxShadow = '0 4px 10px rgba(255,193,7,0.3)';
-        const target = button.getAttribute('data-target');
-        items.forEach(item => {
-          item.style.display = (target === 'todos' || item.getAttribute('data-category') === target) ? 'block' : 'none';
-        });
+        applyFilter(button.getAttribute('data-target'));
+      });
+    });
+
+    dropdownItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        resetButtonStyles();
+        eventosDropdown.style.background = '#ffc107';
+        eventosDropdown.style.boxShadow = '0 4px 10px rgba(255,193,7,0.3)';
+        applyFilter(item.getAttribute('data-target'));
       });
     });
   });
