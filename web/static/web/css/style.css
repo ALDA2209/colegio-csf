@@ -711,6 +711,7 @@ footer {
   .carrusel-item { min-width: calc(50% - 12px); }
   .hero { grid-template-columns: 1fr; }
   .hero-right { height: 320px; }
+  .footer-top { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
