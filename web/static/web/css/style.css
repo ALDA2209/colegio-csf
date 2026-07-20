@@ -709,6 +709,8 @@ footer {
   .aulas-cards { grid-template-columns: 1fr; }
   .testimonio-grid { grid-template-columns: 1fr; }
   .carrusel-item { min-width: calc(50% - 12px); }
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { height: 320px; }
 }
 
 @media (max-width: 600px) {
