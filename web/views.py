@@ -3,6 +3,8 @@ from django.http import JsonResponse
 import requests
 import os
 
+from .models import Solicitud
+
 def inicio(request):
     return render(request, 'web/index.html')
 
@@ -42,6 +44,11 @@ def contacto(request):
         asunto = request.POST.get("asunto", "")
         mensaje = request.POST.get("mensaje", "")
         cuerpo = "Nombre: " + nombre + " " + apellido + "\nCorreo: " + email + "\nTelefono: " + telefono + "\nNino: " + nombre_nino + "\nEdad: " + edad + "\nAsunto: " + asunto + "\n\nMensaje:\n" + mensaje
+
+        Solicitud.objects.create(
+            nombre=nombre, apellido=apellido, email=email, telefono=telefono,
+            nombre_nino=nombre_nino, edad=edad, asunto=asunto, mensaje=mensaje,
+        )
 
         api_key = os.environ.get("BREVO_API_KEY", "")
         url = "https://api.brevo.com/v3/smtp/email"
